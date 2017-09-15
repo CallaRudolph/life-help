@@ -1,4 +1,5 @@
 import React from "react";
+import NewTaskForm from "./NewTaskForm";
 
 class NewTaskControl extends React.Component {
 
@@ -14,8 +15,9 @@ class NewTaskControl extends React.Component {
 
   render() {
     let formAreaContent = null;
-    if (this.state.formVisible) {
-      formAreaContent = <h1>Future form</h1>
+    const formVisible = this.state.formVisible;
+    if (formVisible) {
+      formAreaContent = <NewTaskForm/>
     } else {
       formAreaContent = <button onClick={this.handleDisplayingForm}>Add New Task</button>
     }
