@@ -19,18 +19,17 @@ function Task(props) {
   }
   var heart = {
     width: "40",
-    float: "right",
-    display: "inline-block"
+    float: "right"
   }
   return (
     <ul className="list-unstyled">
       <div style={flexItem}>
         <li>
           <div style={well} className="well">
+            <img style={heart} src="http://www.freeiconspng.com/uploads/pink-heart-png-12.png"/>
             <h3>{props.task}</h3>
             <h4>Complete {props.frequency}</h4>
             <CompleteTask taskName={props.task}/>
-            <img style={heart} src="http://www.freeiconspng.com/uploads/pink-heart-png-12.png"/>
           </div>
         </li>
       </div>
