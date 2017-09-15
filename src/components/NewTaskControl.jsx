@@ -1,11 +1,21 @@
 import React from "react";
 
-function NewTaskControl(props) {
-  return (
-    <div>
-      <p>New Task Control is here.</p>
-    </div>
-  );
+class NewTaskControl extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      formVisible: false
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <button>Add New Task</button>
+      </div>
+    );
+  }
 }
 
 export default NewTaskControl;
