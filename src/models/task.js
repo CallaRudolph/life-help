@@ -5,11 +5,11 @@ class Task {
     this.task = task;
     this.frequency = frequency;
     this.timeComplete = new Moment();
-    this.timeSinceCompleted = this.setTimeSinceCompleted();
+    this.timeSinceCompleted = "a few seconds";
   }
-  
+
   setTimeSinceCompleted() {
-    return this.timeComplete.fromNow(true);
+    this.timeSinceCompleted =  this.timeComplete.fromNow(true);
   }
 }
 
