@@ -1,9 +1,10 @@
 import React from "react";
+import Life from "./Life";
 
 function App(props){
   return (
     <div>
-      <p>App works!!!!</p>
+      <Life/>
     </div>
   );
 }
