@@ -18,10 +18,15 @@ class CompleteTask extends React.Component {
     let formAreaContent = null;
     const timeComplete = this.state.timeComplete;
     if (timeComplete) {
-      formAreaContent = <p><em>Completed: </em> {timeComplete}</p>;
+      formAreaContent =
+      <div>
+        <p><em>Completed: </em> {timeComplete}</p>
+        <button onClick={this.complete}>Do it again</button>
+      </div>
     } else {
       formAreaContent = <button onClick={this.complete}>Do it</button>
     }
+
     return (
       <div>
         {formAreaContent}
