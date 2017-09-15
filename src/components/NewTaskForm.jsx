@@ -1,6 +1,7 @@
 import React from "react";
 import Task from "../models/Task.js";
 import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
 
 class NewTaskForm extends React.Component {
 
@@ -33,7 +34,7 @@ class NewTaskForm extends React.Component {
             id="frequency"
             placeholder="Frequency"/>
           <br/><br/>
-          <button type="submit">Add task</button>
+          <Button bsStyle="primary" type="submit">Add task</Button>
         </form>
       </div>
     );
