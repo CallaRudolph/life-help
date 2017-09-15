@@ -1,6 +1,7 @@
 import React from "react";
 import Moment from "moment";
 import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
 
 class CompleteTask extends React.Component {
 
@@ -15,7 +16,7 @@ class CompleteTask extends React.Component {
     var newShowComplete = true;
     this.setState({showComplete: newShowComplete});
     var date = new Moment();
-    var dateString = date.format("MMM Do YY, h:mm a");
+    var dateString = date.format("MMM Do, h:mm a");
     this.setState({test: dateString});
   }
 
@@ -23,12 +24,12 @@ class CompleteTask extends React.Component {
     console.log(this.props.taskName);
     let formAreaContent = null;
     if (this.state.showComplete === false) {
-      formAreaContent = <button onClick={this.completeTask}>{this.props.taskName}</button>
+      formAreaContent = <Button bsStyle="success" onClick={this.completeTask}>{this.props.taskName}</Button>
     } else {
       formAreaContent =
       <div>
         <p><em>Completed: {this.state.test} </em></p>
-      <button onClick={this.completeTask}>{this.props.taskName} again</button>
+      <Button bsStyle="success" onClick={this.completeTask}>{this.props.taskName} again</Button>
       </div>
     }
     return (

@@ -1,6 +1,7 @@
 import React from "react";
 import NewTaskForm from "./NewTaskForm";
 import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
 
 class NewTaskControl extends React.Component {
 
@@ -27,7 +28,7 @@ class NewTaskControl extends React.Component {
         onNewTaskCreation={this.props.onNewTaskCreation}
         hideFormAfterSubmission={this.hideForm}/>
     } else {
-      formAreaContent = <button onClick={this.showForm}>Add New Task</button>
+      formAreaContent = <Button block bsStyle="info" bsSize="large" onClick={this.showForm}>Add New Task</Button>
     }
 
     return (
