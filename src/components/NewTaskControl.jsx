@@ -1,5 +1,6 @@
 import React from "react";
 import NewTaskForm from "./NewTaskForm";
+import PropTypes from "prop-types";
 
 class NewTaskControl extends React.Component {
 
@@ -28,6 +29,10 @@ class NewTaskControl extends React.Component {
       </div>
     );
   }
+}
+
+NewTaskControl.propTypes = {
+  onNewTaskCreation: PropTypes.func
 }
 
 export default NewTaskControl;

@@ -21,7 +21,7 @@ class Life extends React.Component {
   render() {
     return (
       <div>
-        <NewTaskControl/>
+        <NewTaskControl onNewTaskCreation={this.addNewTaskToList}/>
         <TaskList
           taskList = {this.state.masterTaskList}/>
       </div>
