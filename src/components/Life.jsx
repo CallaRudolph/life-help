@@ -18,26 +18,6 @@ class Life extends React.Component {
     this.setState({masterTaskList: newMasterTaskList});
   }
 
-  updateTimeSinceCompleted() {
-    console.log("check");
-    let newMasterTaskList = this.state.masterTaskList.slice();
-    newMasterTaskList.forEach((task) =>
-      task.setTimeSinceCompleted()
-    );
-    this.setState({masterTaskList: newMasterTaskList});
-  }
-
-  componentDidMount() {
-    this.timeSinceCompletedChecker = setInterval(() =>
-      this.updateTimeSinceCompleted(),
-      5000
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timeSinceCompletedChecker);
-  }
-
   render() {
     return (
       <div>

@@ -6,13 +6,32 @@ class CompleteTask extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {showComplete: false};
+    this.state = {showComplete: false,
+                  taskComplete: new Moment(),
+                  taskSinceCompleted: "a few seconds"};
     this.showCompletedTime = this.showCompletedTime.bind(this);
+    this.setTaskSinceCompleted = this.setTaskSinceCompleted.bind(this);
+  }
+
+  setTaskSinceCompleted() {
+    this.state.taskSinceCompleted = this.state.taskComplete.fromNow(true);
   }
 
   showCompletedTime() {
     var newShowComplete = true;
     this.setState({showComplete: newShowComplete});
+  }
+
+  componentDidMount() {
+    console.log("check");
+    this.timeSinceCompletedChecker = setInterval(() =>
+      this.setTaskSinceCompleted(),
+      5000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timeSinceCompletedChecker);
   }
 
   render() {
@@ -22,7 +41,7 @@ class CompleteTask extends React.Component {
     } else {
       formAreaContent =
       <div>
-        <p><em>Completed: {this.props.timeSinceCompleted} ago </em></p>
+        <p><em>Completed: {this.state.taskSinceCompleted} ago </em></p>
       <button onClick={this.showCompletedTime}>Do it again</button>
       </div>
     }
