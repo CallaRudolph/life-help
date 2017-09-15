@@ -5,31 +5,27 @@ import PropTypes from "prop-types";
 class CompleteTask extends React.Component {
 
   constructor(props) {
-    let timeCompleted = props.timeCompleted;
     super(props);
-    this.state = {timeCompleted};
-    this.complete = this.complete.bind(this);
+    this.state = {showComplete: false};
+    this.showCompletedTime = this.showCompletedTime.bind(this);
   }
 
-  complete() {
-    var newTimeCompleted = this.state.timeCompleted;
-    newTimeCompleted = "now";
-    this.setState({timeCompleted: newTimeCompleted});
+  showCompletedTime() {
+    var newShowComplete = true;
+    this.setState({showComplete: newShowComplete});
   }
 
   render() {
     let formAreaContent = null;
-    const timeCompleted = this.state.timeCompleted;
-    if (timeCompleted === "now") {
+    if (this.state.showComplete === false) {
+      formAreaContent = <button onClick={this.showCompletedTime}>Do it</button>
+    } else {
       formAreaContent =
       <div>
-        <p><em>Completed: </em> {timeCompleted}</p>
-        <button onClick={this.complete}>Do it again</button>
+        <p><em>Completed: {this.props.timeSinceCompleted} ago </em></p>
+      <button onClick={this.showCompletedTime}>Do it again</button>
       </div>
-    } else {
-      formAreaContent = <button onClick={this.complete}>Do it</button>
     }
-
     return (
       <div>
         {formAreaContent}
@@ -39,7 +35,7 @@ class CompleteTask extends React.Component {
 }
 
 CompleteTask.propTypes = {
-  timeCompleted: PropTypes.string
+  timeSinceCompleted: PropTypes.string
 }
 
 export default CompleteTask;

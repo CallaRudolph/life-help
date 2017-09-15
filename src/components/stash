@@ -1,0 +1,19 @@
+complete() {
+  var newTimeCompleted = this.state.timeCompleted;
+  newTimeCompleted = new Moment();
+  this.setState({timeCompleted: newTimeCompleted});
+}
+
+    this.complete = this.complete.bind(this);
+
+
+const timeCompleted = this.state.timeCompleted;
+if (timeCompleted === "") {
+  formAreaContent = <button onClick={this.complete}>Do it</button>
+} else {
+  formAreaContent =
+  <div>
+    <p><em>Completed: </em> {timeCompleted}</p>
+    <button onClick={this.complete}>Do it again</button>
+  </div>
+}
