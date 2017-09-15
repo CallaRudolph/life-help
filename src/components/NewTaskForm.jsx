@@ -14,6 +14,7 @@ class NewTaskForm extends React.Component {
     const { _task, _frequency } = this.refs;
     var newTask = new Task(_task.value, _frequency.value);
     this.props.onNewTaskCreation(newTask);
+    this.props.hideFormAfterSubmission();
   }
 
   render() {
@@ -40,7 +41,8 @@ class NewTaskForm extends React.Component {
 }
 
 NewTaskForm.propTypes = {
-  onNewTaskCreation: PropTypes.func
+  onNewTaskCreation: PropTypes.func,
+  hideFormAfterSubmission: PropTypes.func
 }
 
 export default NewTaskForm;

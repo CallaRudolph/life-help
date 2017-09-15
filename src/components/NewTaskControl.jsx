@@ -7,11 +7,16 @@ class NewTaskControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {formVisible: false};
-    this.handleDisplayingForm = this.handleDisplayingForm.bind(this);
+    this.showForm = this.showForm.bind(this);
+    this.hideForm = this.hideForm.bind(this);
   }
 
-  handleDisplayingForm(event) {
+  showForm() {
     this.setState({formVisible: true});
+  }
+
+  hideForm() {
+    this.setState({formVisible: false});
   }
 
   render() {
@@ -19,9 +24,10 @@ class NewTaskControl extends React.Component {
     const formVisible = this.state.formVisible;
     if (formVisible) {
       formAreaContent = <NewTaskForm
-        onNewTaskCreation={this.props.onNewTaskCreation}/>
+        onNewTaskCreation={this.props.onNewTaskCreation}
+        hideFormAfterSubmission={this.hideForm}/>
     } else {
-      formAreaContent = <button onClick={this.handleDisplayingForm}>Add New Task</button>
+      formAreaContent = <button onClick={this.showForm}>Add New Task</button>
     }
 
     return (
