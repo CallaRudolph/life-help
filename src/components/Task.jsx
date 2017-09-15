@@ -15,6 +15,7 @@ function Task(props) {
   }
   var well = {
     backgroundColor: "#b7e3cc",
+    color: "#7b4b94"
   }
   return (
     <ul className="list-unstyled">
