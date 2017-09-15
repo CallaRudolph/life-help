@@ -24,12 +24,14 @@ class NewTaskControl extends React.Component {
   render() {
     return (
       <div>
+        <br/>
         <Button
           block
           bsStyle="info"
           bsSize="large" onClick={this.showFormModal}>
             Add New Task
         </Button>
+        <br/>
         <Modal
           show={this.state.formModalVisible}
           onHide={this.hideFormModal}>

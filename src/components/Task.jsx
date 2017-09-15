@@ -3,12 +3,26 @@ import PropTypes from "prop-types";
 import CompleteTask from "./CompleteTask";
 
 function Task(props) {
+  var flexItem = {
+    margin: "5",
+    order: "1",
+    flexGrow: "1",
+    wordBreak: "normal",
+    minWidth: "275",
+    maxWidth: "290",
+  }
   return (
-    <div>
-      <h3>{props.task}</h3>
-      <h4>Complete {props.frequency}</h4>
-      <CompleteTask taskName={props.task}/>
-    </div>
+    <ul className="list-unstyled">
+      <div style={flexItem}>
+        <li>
+          <div className="well">
+            <h3>{props.task}</h3>
+            <h4>Complete {props.frequency}</h4>
+            <CompleteTask taskName={props.task}/>
+          </div>
+        </li>
+      </div>
+    </ul>
   );
 }
 

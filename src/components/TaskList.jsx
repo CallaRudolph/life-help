@@ -3,8 +3,14 @@ import Task from "./Task";
 import PropTypes from "prop-types";
 
 function TaskList(props) {
+  var flexContainer = {
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "row",
+    marginLeft: "30",
+  }
   return (
-    <div>
+    <div style={flexContainer}>
       {props.taskList.map((task, index) =>
         <Task task={task.task}
               frequency={task.frequency}
