@@ -1,48 +1,32 @@
 import React from "react";
 import Moment from "moment";
-import PropTypes from "prop-types";
 
 class CompleteTask extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {showComplete: false,
-                  taskComplete: new Moment(),
-                  taskSinceCompleted: "a few seconds"};
-    this.showCompletedTime = this.showCompletedTime.bind(this);
-    this.setTaskSinceCompleted = this.setTaskSinceCompleted.bind(this);
+                  test: null};
+    this.completeTask = this.completeTask.bind(this);
   }
 
-  setTaskSinceCompleted() {
-    this.state.taskSinceCompleted = this.state.taskComplete.fromNow(true);
-  }
-
-  showCompletedTime() {
+  completeTask() {
     var newShowComplete = true;
     this.setState({showComplete: newShowComplete});
-  }
-
-  componentDidMount() {
-    console.log("check");
-    this.timeSinceCompletedChecker = setInterval(() =>
-      this.setTaskSinceCompleted(),
-      5000
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timeSinceCompletedChecker);
+    var date = new Moment();
+    var dateString = date.format("MMM Do YY, h:mm");
+    this.setState({test: dateString});
   }
 
   render() {
     let formAreaContent = null;
     if (this.state.showComplete === false) {
-      formAreaContent = <button onClick={this.showCompletedTime}>Do it</button>
+      formAreaContent = <button onClick={this.completeTask}>Do it</button>
     } else {
       formAreaContent =
       <div>
-        <p><em>Completed: {this.state.taskSinceCompleted} ago </em></p>
-      <button onClick={this.showCompletedTime}>Do it again</button>
+        <p><em>Completed: {this.state.test} </em></p>
+      <button onClick={this.completeTask}>Do it again</button>
       </div>
     }
     return (
@@ -51,10 +35,6 @@ class CompleteTask extends React.Component {
       </div>
     );
   }
-}
-
-CompleteTask.propTypes = {
-  timeSinceCompleted: PropTypes.string
 }
 
 export default CompleteTask;
