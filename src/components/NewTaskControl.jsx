@@ -37,6 +37,9 @@ class NewTaskControl extends React.Component {
     var cupcake = {
       width: "30"
     }
+    var modal = {
+      fontFamily: "'Poiret One', cursive"
+    }
     var modalHeader = {
       backgroundColor: "#B7E3CC"
     }
@@ -63,11 +66,12 @@ class NewTaskControl extends React.Component {
         </Button>
         <br/>
       <Modal
+          style={modal}
           show={this.state.formModalVisible}
           onHide={this.hideFormModal}>
           <Modal.Header style={modalHeader}>
             <Modal.Title style={modalTitle}>
-              Add task
+              <em>So you have something to do . . . </em>
               <img style={cupcake} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
               <img style={cupcake} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
             </Modal.Title>

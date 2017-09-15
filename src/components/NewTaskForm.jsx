@@ -27,16 +27,22 @@ class NewTaskForm extends React.Component {
       width: "40",
       float: "right"
     }
+    var input = {
+      fontSize: "16",
+      width: "190"
+    }
     return (
       <div>
         <form onSubmit={this.handleNewTask}>
           <textarea
+            style={input}
             ref="_task"
             type="text"
             id="task"
             placeholder="What do you need to do?"/>
           <br/>
           <input
+            style={input}
             ref="_frequency"
             type="text"
             id="frequency"
