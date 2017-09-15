@@ -22,6 +22,18 @@ class NewTaskControl extends React.Component {
   }
 
   render() {
+    var addButton = {
+      fontSize: "30",
+      textShadow: "1px 1px purple"
+    }
+    var cupcake1 = {
+      width: "30",
+      float: "left"
+    }
+    var cupcake2 = {
+      width: "30",
+      float: "right"
+    }
     var cupcake = {
       width: "30"
     }
@@ -40,11 +52,14 @@ class NewTaskControl extends React.Component {
         <br/>
         <Button
           block
+          style={addButton}
           bsStyle="info"
           bsSize="large" onClick={this.showFormModal}>
-            <img style={cupcake} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
+            <img style={cupcake1} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
+            <img style={cupcake1} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
             Add New Task
-            <img style={cupcake} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
+            <img style={cupcake2} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
+            <img style={cupcake2} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
         </Button>
         <br/>
       <Modal
