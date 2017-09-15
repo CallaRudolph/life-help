@@ -51,7 +51,7 @@ _The purpose of this app was to practice pure and stateful components with PropT
 * HTML
 
 ## License Information
-Copyright &copy; 2017 Calla Rudolph_
+Copyright &copy; 2017 Calla Rudolph
 
 _Please email me at the above address with any comments or improvements you have found!_
 

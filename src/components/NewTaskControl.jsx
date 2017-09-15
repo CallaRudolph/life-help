@@ -22,6 +22,9 @@ class NewTaskControl extends React.Component {
   }
 
   render() {
+    var cupcake = {
+      width: "30"
+    }
     return (
       <div>
         <br/>
@@ -29,7 +32,9 @@ class NewTaskControl extends React.Component {
           block
           bsStyle="info"
           bsSize="large" onClick={this.showFormModal}>
+            <img style={cupcake} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
             Add New Task
+            <img style={cupcake} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
         </Button>
         <br/>
         <Modal
