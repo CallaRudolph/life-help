@@ -14,7 +14,7 @@ class Life extends React.Component {
 
   addNewTaskToList(newTask) {
     var newMasterTaskList = this.state.masterTaskList.slice();
-    newMasterTaskList.push(newTicket);
+    newMasterTaskList.push(newTask);
     this.setState({masterTaskList: newMasterTaskList});
   }
 

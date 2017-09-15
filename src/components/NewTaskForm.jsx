@@ -13,6 +13,7 @@ class NewTaskForm extends React.Component {
     event.preventDefault()
     const { _task, _frequency } = this.refs;
     var newTask = new Task(_task.value, _frequency.value);
+    this.props.onNewTaskCreation(newTask);
   }
 
   render() {
@@ -26,7 +27,7 @@ class NewTaskForm extends React.Component {
             placeholder="What do you need to do?"/>
           <br/>
           <input
-            ref="frequency"
+            ref="_frequency"
             type="text"
             id="frequency"
             placeholder="Frequency"/>
