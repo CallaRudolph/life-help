@@ -8,7 +8,7 @@ function TaskList(props) {
       {props.taskList.map((task, index) =>
         <Task task={task.task}
               frequency={task.frequency}
-            key={index}/>
+              key={index}/>
       )}
     </div>
   );
