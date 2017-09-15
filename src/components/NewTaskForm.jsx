@@ -1,4 +1,5 @@
 import React from "react";
+import Task from "../models/Task.js";
 
 class NewTaskForm extends React.Component {
 
@@ -10,6 +11,7 @@ class NewTaskForm extends React.Component {
   handleNewTask(event) {
     event.preventDefault()
     const { _task, _frequency } = this.refs;
+    var newTask = new Task(_task.value, _frequency.value);
   }
 
   render() {
