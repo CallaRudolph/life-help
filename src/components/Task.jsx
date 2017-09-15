@@ -15,7 +15,8 @@ function Task(props) {
   }
   var well = {
     backgroundColor: "#b7e3cc",
-    color: "#7b4b94"
+    color: "#7b4b94",
+    fontSize: "20"
   }
   var heart = {
     width: "40",
@@ -27,7 +28,7 @@ function Task(props) {
         <li>
           <div style={well} className="well">
             <img style={heart} src="http://www.freeiconspng.com/uploads/pink-heart-png-12.png"/>
-            <h3>{props.task}</h3>
+            <h1>{props.task}</h1>
             <h4>Complete {props.frequency}</h4>
             <CompleteTask taskName={props.task}/>
           </div>

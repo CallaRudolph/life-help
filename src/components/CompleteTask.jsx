@@ -21,22 +21,25 @@ class CompleteTask extends React.Component {
   }
 
   render() {
-    var complete = {
+    var completeButton = {
       backgroundColor: "#7b4b94",
       color: "white"
+    }
+    var completion = {
+      fontSize: "16"
     }
     let formAreaContent = null;
     if (this.state.showComplete === false) {
       formAreaContent =
         <Button
-          style={complete} onClick={this.completeTask}>
+          style={completeButton} onClick={this.completeTask}>
           {this.props.taskName} now</Button>
     } else {
       formAreaContent =
-      <div>
-        <p><em>Completed: {this.state.completedTime} </em></p>
+      <div style={completion}>
+        <p><em>last completed: {this.state.completedTime} </em></p>
         <Button
-          style={complete} onClick={this.completeTask}>
+          style={completeButton} onClick={this.completeTask}>
           {this.props.taskName} again</Button>
       </div>
     }
