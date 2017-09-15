@@ -1,7 +1,10 @@
 import React from "react";
+import Task from "./Task";
 
 function TaskList(props) {
-  return ();
+  return (
+    <Task />
+  );
 }
 
 export default TaskList;
