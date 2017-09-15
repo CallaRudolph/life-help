@@ -1,9 +1,10 @@
 import React from "react";
+import NewTaskControl from "./NewTaskControl";
 
 function Life(props) {
   return (
     <div>
-      <p>Life goes here</p>
+      <NewTaskControl/>
     </div>
   );
 }
