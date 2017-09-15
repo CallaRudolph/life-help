@@ -4,15 +4,18 @@ class NewTaskControl extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      formVisible: false
-    };
+    this.state = {formVisible: false};
+    this.handleDisplayingForm = this.handleDisplayingForm.bind(this);
+  }
+
+  handleDisplayingForm(event) {
+    this.setState({formVisible: true});
   }
 
   render() {
     return (
       <div>
-        <button>Add New Task</button>
+        <button onClick={this.handleDisplayingForm}>Add New Task</button>
       </div>
     );
   }
