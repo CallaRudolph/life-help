@@ -3,7 +3,7 @@ import Life from "./Life";
 
 function App(props){
   return (
-    <div>
+    <div className="container">
       <Life/>
     </div>
   );
