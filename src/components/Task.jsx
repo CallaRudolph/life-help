@@ -7,7 +7,7 @@ function Task(props) {
     <div>
       <h3>{props.task}</h3>
       <h4>Complete {props.frequency}</h4>
-      <CompleteTask/>
+      <CompleteTask taskName={props.task}/>
     </div>
   );
 }
