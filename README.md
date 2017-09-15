@@ -8,7 +8,9 @@ This ReactJS app was created to help the user keep track of daily life tasks, su
 
 _The purpose of this app was to practice pure and stateful components with PropTypes._
 
-![Screenshot](src/img/screen.png)
+![Screenshot](src/img/list.png)
+
+![Modal](src/img/modal.png)
 
 ## Integration
 
