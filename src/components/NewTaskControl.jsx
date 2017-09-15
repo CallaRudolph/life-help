@@ -13,9 +13,16 @@ class NewTaskControl extends React.Component {
   }
 
   render() {
+    let formAreaContent = null;
+    if (this.state.formVisible) {
+      formAreaContent = <h1>Future form</h1>
+    } else {
+      formAreaContent = <button onClick={this.handleDisplayingForm}>Add New Task</button>
+    }
+
     return (
       <div>
-        <button onClick={this.handleDisplayingForm}>Add New Task</button>
+        {formAreaContent}
       </div>
     );
   }
