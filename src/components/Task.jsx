@@ -7,7 +7,8 @@ function Task(props) {
     <div>
       <h3>{props.task}</h3>
       <h4>Complete {props.frequency}</h4>
-      <CompleteTask />
+      <CompleteTask
+        timeCompleted={props.timeComplete}/>
     </div>
   );
 }
@@ -15,6 +16,7 @@ function Task(props) {
 Task.propTypes = {
   task: PropTypes.string.isRequired,
   frequency: PropTypes.string.isRequired,
+  timeComplete: PropTypes.string
 };
 
 export default Task;

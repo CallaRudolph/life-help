@@ -1,26 +1,29 @@
 import React from "react";
+import Moment from "moment";
+import PropTypes from "prop-types";
 
 class CompleteTask extends React.Component {
 
   constructor(props) {
+    let timeCompleted = props.timeCompleted;
     super(props);
-    this.state = {timeComplete: null};
+    this.state = {timeCompleted};
     this.complete = this.complete.bind(this);
   }
 
   complete() {
-    var newTimeComplete = this.state.timeComplete;
-    newTimeComplete = "now";
-    this.setState({timeComplete: newTimeComplete});
+    var newTimeCompleted = this.state.timeCompleted;
+    newTimeCompleted = "now";
+    this.setState({timeCompleted: newTimeCompleted});
   }
 
   render() {
     let formAreaContent = null;
-    const timeComplete = this.state.timeComplete;
-    if (timeComplete) {
+    const timeCompleted = this.state.timeCompleted;
+    if (timeCompleted === "now") {
       formAreaContent =
       <div>
-        <p><em>Completed: </em> {timeComplete}</p>
+        <p><em>Completed: </em> {timeCompleted}</p>
         <button onClick={this.complete}>Do it again</button>
       </div>
     } else {
@@ -33,6 +36,10 @@ class CompleteTask extends React.Component {
       </div>
     );
   }
+}
+
+CompleteTask.propTypes = {
+  timeCompleted: PropTypes.string
 }
 
 export default CompleteTask;
