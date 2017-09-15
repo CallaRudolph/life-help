@@ -1,5 +1,6 @@
 import React from "react";
 import Task from "../models/Task.js";
+import PropTypes from "prop-types";
 
 class NewTaskForm extends React.Component {
 
@@ -35,6 +36,10 @@ class NewTaskForm extends React.Component {
       </div>
     );
   }
+}
+
+NewTaskForm.propTypes = {
+  onNewTaskCreation: PropTypes.func
 }
 
 export default NewTaskForm;

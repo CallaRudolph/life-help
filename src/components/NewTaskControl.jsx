@@ -18,7 +18,8 @@ class NewTaskControl extends React.Component {
     let formAreaContent = null;
     const formVisible = this.state.formVisible;
     if (formVisible) {
-      formAreaContent = <NewTaskForm/>
+      formAreaContent = <NewTaskForm
+        onNewTaskCreation={this.props.onNewTaskCreation}/>
     } else {
       formAreaContent = <button onClick={this.handleDisplayingForm}>Add New Task</button>
     }
