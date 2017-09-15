@@ -19,6 +19,14 @@ class NewTaskForm extends React.Component {
   }
 
   render() {
+    var button = {
+      backgroundColor: "#7D82B8",
+      color: "white"
+    }
+    var heart = {
+      width: "40",
+      float: "right"
+    }
     return (
       <div>
         <form onSubmit={this.handleNewTask}>
@@ -32,9 +40,10 @@ class NewTaskForm extends React.Component {
             ref="_frequency"
             type="text"
             id="frequency"
-            placeholder="Frequency"/>
+            placeholder="Frequency (ex. 'daily')"/>
           <br/><br/>
-          <Button bsStyle="primary" type="submit">Add task</Button>
+          <Button style={button} type="submit">Add task</Button>
+          <img style={heart} src="http://www.freeiconspng.com/uploads/pink-heart-png-12.png"/>
         </form>
       </div>
     );

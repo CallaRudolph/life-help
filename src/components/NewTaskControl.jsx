@@ -25,6 +25,16 @@ class NewTaskControl extends React.Component {
     var cupcake = {
       width: "30"
     }
+    var modalHeader = {
+      backgroundColor: "#B7E3CC"
+    }
+    var modalTitle = {
+      color: "#7D82B8",
+      display: "inline-block"
+    }
+    var modalBody = {
+      backgroundColor: "#B7E3CC"
+    }
     return (
       <div>
         <br/>
@@ -37,13 +47,17 @@ class NewTaskControl extends React.Component {
             <img style={cupcake} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
         </Button>
         <br/>
-        <Modal
+      <Modal
           show={this.state.formModalVisible}
           onHide={this.hideFormModal}>
-          <Modal.Header>
-            <Modal.Title>Add task</Modal.Title>
+          <Modal.Header style={modalHeader}>
+            <Modal.Title style={modalTitle}>
+              Add task
+              <img style={cupcake} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
+              <img style={cupcake} src="https://s-media-cache-ak0.pinimg.com/originals/ec/21/7a/ec217aa73549dce7b5bb9ed1b470c3b8.png"/>
+            </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body style={modalBody}>
             <NewTaskForm
               onNewTaskCreation={this.props.onNewTaskCreation}
               hideFormAfterSubmission={this.hideFormModal}/>
