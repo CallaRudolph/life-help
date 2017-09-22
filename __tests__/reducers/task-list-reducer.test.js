@@ -14,7 +14,7 @@ describe("Task list reducer", () => {
     expect(taskList([], { type: null })).toEqual([]);
   });
 
-  test('should add task to list array' () => {
+  test('should add task to list array', () => {
     const { title, frequency, completed, id } = taskInfo;
     action = {
       type: c.ADD_TASK,

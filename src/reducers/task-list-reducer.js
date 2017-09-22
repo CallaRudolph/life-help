@@ -1,3 +1,17 @@
 export default (state = [], action) => {
-  return state;
+  switch (action.type) {
+    case 'ADD_TASK':
+      const { title, frequency, completed, id } = action;
+      return [
+        ...state,
+        {
+          title: title,
+          frequency: frequency,
+          completed: completed,
+          id: id
+        }
+      ]
+    default:
+      return state;
+  }
 }
