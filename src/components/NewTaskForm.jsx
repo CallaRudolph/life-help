@@ -2,6 +2,8 @@ import React from "react";
 import Task from "../models/Task.js";
 import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
+import { connect } from 'react-redux';
+import c from './../constants';
 
 class NewTaskForm extends React.Component {
 
@@ -13,6 +15,15 @@ class NewTaskForm extends React.Component {
   handleNewTask(event) {
     event.preventDefault()
     const { _task, _frequency } = this.refs;
+    const { dispatch } = this.props;
+    const action = {
+      type: c.ADD_TASK,
+      id: null,
+      title: _task.value,
+      frequency: _frequency.value,
+      completed: null;
+    }
+    dispatch(action);
     var newTask = new Task(_task.value, _frequency.value);
     this.props.onNewTaskCreation(newTask);
     this.props.hideFormAfterSubmission();
@@ -60,5 +71,7 @@ NewTaskForm.propTypes = {
   onNewTaskCreation: PropTypes.func,
   hideFormAfterSubmission: PropTypes.func
 }
+
+NewTaskForm = connect()(NewTaskForm);
 
 export default NewTaskForm;
