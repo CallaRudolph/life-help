@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CompleteTask from "./CompleteTask";
-import Background from '../images/background.jpg';
 
 function Task(props) {
-  let img = '..images/background.jpg'
   var flexItem = {
     margin: "5",
     order: "1",

@@ -1,6 +1,7 @@
 import React from "react";
 import NewTaskControl from "./NewTaskControl";
 import TaskList from "./TaskList";
+import {connect} from 'react-redux';
 
 class Life extends React.Component {
 
@@ -23,10 +24,16 @@ class Life extends React.Component {
       <div>
         <NewTaskControl onNewTaskCreation={this.addNewTaskToList}/>
         <TaskList
-          taskList = {this.state.masterTaskList}/>
+          taskList = {this.props.masterTaskList}/>
       </div>
     );
   }
 }
 
-export default Life;
+const mapStateToProps = state => {
+  return {
+    masterTaskList : state
+  }
+}
+
+export default connect(mapStateToProps)(Life);

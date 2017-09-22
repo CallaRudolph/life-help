@@ -14,17 +14,17 @@ class NewTaskForm extends React.Component {
 
   handleNewTask(event) {
     event.preventDefault()
-    const { _task, _frequency } = this.refs;
+    const { _title, _frequency } = this.refs;
     const { dispatch } = this.props;
     const action = {
       type: c.ADD_TASK,
       id: null,
-      title: _task.value,
+      title: _title.value,
       frequency: _frequency.value,
-      completed: null;
+      completed: null,
     }
     dispatch(action);
-    var newTask = new Task(_task.value, _frequency.value);
+    var newTask = new Task(_title.value, _frequency.value);
     this.props.onNewTaskCreation(newTask);
     this.props.hideFormAfterSubmission();
   }
@@ -47,9 +47,9 @@ class NewTaskForm extends React.Component {
         <form onSubmit={this.handleNewTask}>
           <textarea
             style={input}
-            ref="_task"
+            ref="_title"
             type="text"
-            id="task"
+            id="title"
             placeholder="What do you need to do?"/>
           <br/>
           <input
@@ -72,6 +72,4 @@ NewTaskForm.propTypes = {
   hideFormAfterSubmission: PropTypes.func
 }
 
-NewTaskForm = connect()(NewTaskForm);
-
-export default NewTaskForm;
+export default connect()(NewTaskForm);
