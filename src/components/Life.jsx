@@ -7,22 +7,12 @@ class Life extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      masterTaskList: [],
-    };
-    this.addNewTaskToList = this.addNewTaskToList.bind(this);
-  }
-
-  addNewTaskToList(newTask) {
-    var newMasterTaskList = this.state.masterTaskList.slice();
-    newMasterTaskList.push(newTask);
-    this.setState({masterTaskList: newMasterTaskList});
   }
 
   render() {
     return (
       <div>
-        <NewTaskControl onNewTaskCreation={this.addNewTaskToList}/>
+        <NewTaskControl/>
         <TaskList
           taskList = {this.props.masterTaskList}/>
       </div>

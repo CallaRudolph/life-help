@@ -1,5 +1,4 @@
 import React from "react";
-import Task from "../models/Task.js";
 import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
 import { connect } from 'react-redux';
@@ -24,8 +23,6 @@ class NewTaskForm extends React.Component {
       completed: null,
     }
     dispatch(action);
-    var newTask = new Task(_title.value, _frequency.value);
-    this.props.onNewTaskCreation(newTask);
     this.props.hideFormAfterSubmission();
   }
 
@@ -68,7 +65,6 @@ class NewTaskForm extends React.Component {
 }
 
 NewTaskForm.propTypes = {
-  onNewTaskCreation: PropTypes.func,
   hideFormAfterSubmission: PropTypes.func
 }
 

@@ -26,9 +26,10 @@ function Task(props) {
         <li>
           <div style={well} className="well">
             <img style={heart} src="http://www.freeiconspng.com/uploads/pink-heart-png-12.png"/>
-            <h1>{props.task}</h1>
+            <h1>{props.title}</h1>
             <h4>Complete {props.frequency}</h4>
-            <CompleteTask taskName={props.task}/>
+            <CompleteTask taskTitle={props.title}
+                          completed={props.completed}/>
           </div>
         </li>
       </div>
@@ -37,8 +38,10 @@ function Task(props) {
 }
 
 Task.propTypes = {
-  task: PropTypes.string.isRequired,
-  frequency: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  frequency: PropTypes.string.isRequired,
+  completed: PropTypes.string,
+  id: PropTypes.string
 };
 
 export default Task;

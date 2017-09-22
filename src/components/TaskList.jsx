@@ -12,8 +12,10 @@ function TaskList(props) {
   return (
     <div style={flexContainer}>
       {props.taskList.map((task, index) =>
-        <Task task={task.task}
+        <Task task={task.title}
               frequency={task.frequency}
+              completed={task.completed}
+              id={task.id}
               key={index}/>
       )}
     </div>

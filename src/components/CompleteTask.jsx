@@ -8,7 +8,7 @@ class CompleteTask extends React.Component {
   constructor(props) {
     super(props);
     this.state = {showComplete: false,
-                  completedTime: null};
+                  completedTime: this.props.completed};
     this.completeTask = this.completeTask.bind(this);
   }
 
@@ -33,14 +33,14 @@ class CompleteTask extends React.Component {
       formAreaContent =
         <Button
           style={completeButton} onClick={this.completeTask}>
-          {this.props.taskName} now</Button>
+          {this.props.taskTitle} now</Button>
     } else {
       formAreaContent =
       <div style={completion}>
         <p><em>last completed: {this.state.completedTime} </em></p>
         <Button
           style={completeButton} onClick={this.completeTask}>
-          {this.props.taskName} again</Button>
+          {this.props.taskTitle} again</Button>
       </div>
     }
     return (
@@ -52,7 +52,8 @@ class CompleteTask extends React.Component {
 }
 
 CompleteTask.propTypes = {
-  taskName: PropTypes.string.isRequired
+  taskTitle: PropTypes.string.isRequired,
+  completed: PropTypes.string
 }
 
 export default CompleteTask;

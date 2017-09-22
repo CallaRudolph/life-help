@@ -78,17 +78,12 @@ class NewTaskControl extends React.Component {
           </Modal.Header>
           <Modal.Body style={modalBody}>
             <NewTaskForm
-              onNewTaskCreation={this.props.onNewTaskCreation}
               hideFormAfterSubmission={this.hideFormModal}/>
           </Modal.Body>
         </Modal>
       </div>
     );
   }
-}
-
-NewTaskControl.propTypes = {
-  onNewTaskCreation: PropTypes.func
 }
 
 export default NewTaskControl;
